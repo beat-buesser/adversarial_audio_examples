@@ -14,5 +14,6 @@ RUN apt-get update \
 RUN pip install --no-cache --upgrade pip && \
     pip install --no-cache notebook jupyterlab
 
-USER jovyan
+USER ${NB_USER}
+ENV HOME /home/${NB_USER}
 WORKDIR ${HOME}
