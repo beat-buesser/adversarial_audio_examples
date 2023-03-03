@@ -1,5 +1,6 @@
 FROM jupyter/base-notebook:python-3.9.7
 
+USER root
 RUN apt-get update \
  && apt-get install  -yq --no-install-recommends \
     libfontconfig1 \
@@ -19,9 +20,6 @@ ARG NB_UID
 ENV USER ${NB_USER}
 ENV HOME /home/${NB_USER}
 
-RUN adduser --disabled-password \
-    --gecos "Default user" \
-    --uid ${NB_UID} \
-    ${NB_USER}
+USER jovyan
 WORKDIR ${HOME}
 USER ${USER}
