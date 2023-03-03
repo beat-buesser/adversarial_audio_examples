@@ -3,6 +3,9 @@ FROM python:3.9-slim
 RUN pip install --no-cache --upgrade pip && \
     pip install --no-cache notebook jupyterlab
 
+# install ffmpeg
+RUN sudo apt-get -y install ffmpeg libavcodec-extra vim git
+
 # create user with a home directory
 ARG NB_USER
 ARG NB_UID
@@ -15,5 +18,3 @@ RUN adduser --disabled-password \
     ${NB_USER}
 WORKDIR ${HOME}
 USER ${USER}
-
-RUN apt-get -y install ffmpeg libavcodec-extra vim git
