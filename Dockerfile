@@ -4,6 +4,7 @@ RUN pip install --no-cache --upgrade pip && \
     pip install --no-cache notebook jupyterlab
 
 # install ffmpeg
+RUN apt-get update -y
 RUN apt-get -y install ffmpeg libavcodec-extra vim git
 
 # create user with a home directory
