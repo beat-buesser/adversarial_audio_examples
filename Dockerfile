@@ -14,12 +14,5 @@ RUN apt-get update \
 RUN pip install --no-cache --upgrade pip && \
     pip install --no-cache notebook jupyterlab
 
-# create user with a home directory
-ARG NB_USER
-ARG NB_UID
-ENV USER ${NB_USER}
-ENV HOME /home/${NB_USER}
-
 USER jovyan
 WORKDIR ${HOME}
-USER ${USER}
