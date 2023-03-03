@@ -8,6 +8,7 @@ RUN apt-get update \
     libosmesa6 \
     ffmpeg \
     libavcodec-extra \
+    git \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # install the notebook package
@@ -17,3 +18,6 @@ RUN pip install --no-cache --upgrade pip && \
 USER ${NB_USER}
 ENV HOME /home/${NB_USER}
 WORKDIR ${HOME}
+
+# Install
+RUN git clone https://github.com/beat-buesser/adversarial_audio_examples.git
