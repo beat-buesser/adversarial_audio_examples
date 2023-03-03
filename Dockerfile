@@ -7,15 +7,4 @@ RUN pip install --no-cache --upgrade pip && \
 RUN apt-get update -y
 RUN apt-get -y install ffmpeg libavcodec-extra vim git
 
-# create user with a home directory
-ARG NB_USER
-ARG NB_UID
-ENV USER ${NB_USER}
-ENV HOME /home/${NB_USER}
-
-RUN adduser --disabled-password \
-    --gecos "Default user" \
-    --uid ${NB_UID} \
-    ${NB_USER}
-WORKDIR ${HOME}
-USER ${USER}
+ENV HOME=/tmp
