@@ -19,5 +19,7 @@ USER ${NB_USER}
 ENV HOME /home/${NB_USER}
 WORKDIR ${HOME}
 
-# Install
 RUN git clone https://github.com/beat-buesser/adversarial_audio_examples.git
+
+WORKDIR ${HOME}/adversarial_audio_examples
+RUN pip install -r requirements.txt
