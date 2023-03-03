@@ -1,5 +1,0 @@
-name: adversarial_audio_examples
-dependencies:
-  - adversarial-robustness-toolbox=1.13.1
-  - torch=1.13.0
-  - torchaudio=0.13.0
