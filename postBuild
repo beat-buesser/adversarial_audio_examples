@@ -1,6 +1,7 @@
-###!/bin/bash
+#!/usr/bin/env python3
+
 from art.utils import get_file
 
 # download AudioMNIST data and pretrained model
 get_file('adversarial_audio_model.pt', 'https://www.dropbox.com/s/o7nmahozshz2k3i/model_raw_audio_state_dict_202002260446.pt?dl=1')
-get_file('audiomnist.tar.gz', 'https://api.github.com/repos/soerenab/AudioMNIST/tarball');
+get_file('audiomnist.tar.gz', 'https://api.github.com/repos/soerenab/AudioMNIST/tarball')
